@@ -1,0 +1,15 @@
+//Import the database Json file
+const database = require("../database/john.lib.json");
+
+module.exports = {
+  //Get the database's datas
+  getDatabase: (req, res) => {
+    try {
+      console.log(database);
+      res.status(200).json(database);
+    } catch (error) {
+      console.error("Error accessing database:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+};
