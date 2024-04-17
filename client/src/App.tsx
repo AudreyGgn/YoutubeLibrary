@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MenuDiv from './components/MenuDiv';
+import DisplayDiv from './components/DisplayDiv';
 
 //Fetch data from route "/"
 async function fetchDatabase(): Promise<any> {
@@ -31,11 +32,13 @@ function App() {
 
   const userName = data?.name;
   const videos = data?.videos;
+  const videoId = ""
 
   return (
     
-      <div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', margin: '20px'}}>
       <MenuDiv userName={userName} videos={videos} />
+      <DisplayDiv videoId={videoId}/>
       </div>
   
   );

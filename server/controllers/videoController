@@ -1,0 +1,34 @@
+const fs = require("fs");
+let database = require("../database/john.lib.json");
+
+module.exports = {
+  // Supprimer une vidéo de la base de données avec son ID
+  deleteVideoById: (req, res) => {
+    const videoId = req.params.id.toString(); // Convertir en chaîne de caractères
+    console.log("je rentre");
+
+    try {
+      // Parser le JSON pour obtenir l'objet JavaScript
+
+      // Extraire le tableau videos de l'objet JavaScript
+      const videos = database.videos;
+
+      // Filtrer les vidéos pour exclure celle avec l'ID donné
+      const updatedVideos = videos.filter((video) => video.id !== videoId);
+      // Remplacer le tableau videos dans l'objet JavaScript
+      database.videos = updatedVideos;
+
+      // console.log(database);
+
+      console.log(database);
+      database = JSON.stringify(database);
+
+      // Écrire les vidéos mises à jour dans le fichier JSON
+      fs.writeFileSync("database/john.lib.json", database);
+      res.status(200).json({ message: "Video deleted successfully" });
+    } catch (error) {
+      console.error("Error deleting video:", error);
+      res.status(500).json({ error: "Failed to delete video" });
+    }
+  },
+};
