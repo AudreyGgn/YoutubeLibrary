@@ -23,3 +23,7 @@ This project is a web application that presents a playlist stored as a JSON file
 ## Usage
 
 - To get the playlist of a user, use the following URL replacing "username" by one of this 3 names : ada, john, mark : http://localhost:3000/username
+
+---
+
+💪 Special thanks to Mathurin & Alexis !
