@@ -1,0 +1,27 @@
+.menuDiv {
+    display: flex;
+    width: 29.8125rem;
+    height: 80vh;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    flex-shrink: 0;
+    border-radius: 4.125rem;
+    background: #E0E0E0;
+  }
+
+  .hello {
+    color: #43302B;
+    font-size: 2.8125rem;
+    margin:0;
+  }
+
+  .searchInput {
+    display:flex;
+    width: 100%;
+    border-radius: 2.5rem;
+    background: #FFFCFC
+;
+  }
+  

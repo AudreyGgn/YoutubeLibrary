@@ -1,11 +1,17 @@
-//Import the database Json file
-const database = require("../database/john.lib.json");
+// Get the database's datas based on the user's name
 
 module.exports = {
-  //Get the database's datas
-  getDatabase: (req, res) => {
+  getDatabase: async (req, res) => {
     try {
-      console.log(database);
+      // Extract the username from the request parameters (from the HTTP request URL)
+      const username = req.params.username;
+      //console.log(username);
+
+      // Load the database file based on the username
+      let database = require(`../database/${username}.lib.json`);
+      //console.log(database);
+
+      // Send the database data (backend)
       res.status(200).json(database);
     } catch (error) {
       console.error("Error accessing database:", error);

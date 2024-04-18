@@ -1,27 +1,28 @@
 import React from 'react';
 import Video from './Video';
 
+// Define interface for video data
 interface VideoData {
   id: string;
   title: string;
 }
 
+// Define interface for VideosList props
 interface VideosListProps {
-  videos: VideoData[] | undefined; 
-  onDelete: (id: string) => void;
+  videos: VideoData[] | undefined; // Array of video data or undefined
+  onDelete: (id: string) => void; // Function to delete a video
 }
 
 
 const VideosList: React.FC<VideosListProps> = ({ videos }) => {
-    // Fonction pour supprimer une vidéo de la base de données
+
+     // Request to delete a video from the database by its ID
     const deleteVideo = async (id: string) => {
       try {
-        // Envoyer une requête DELETE à l'API pour supprimer la vidéo
         const response = await fetch(`http://localhost:5000/videos/${id}`, {
           method: 'DELETE',
         });
         if (response.ok) {
-          // Si la suppression réussit, actualiser la liste des vidéos ou effectuer d'autres actions si nécessaire
           console.log('Video deleted successfully');
           window.location.reload();
         } else {

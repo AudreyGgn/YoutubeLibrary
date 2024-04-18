@@ -1,30 +1,27 @@
 const fs = require("fs");
-let database = require("../database/john.lib.json");
+
+// Delete a video from the database by its ID
 
 module.exports = {
-  // Supprimer une vidéo de la base de données avec son ID
   deleteVideoById: (req, res) => {
-    const videoId = req.params.id.toString(); // Convertir en chaîne de caractères
-    console.log("je rentre");
+    // Get the username and load the right database
+    const username = req.params.username;
+    let database = require(`../database/${username}.lib.json`);
+
+    // Get the video ID (parameter from the HTTP request within the delete function on VideosList.tsx) and
+    //convert it to a string
+    const videoId = req.params.id.toString();
 
     try {
-      // Parser le JSON pour obtenir l'objet JavaScript
-
-      // Extraire le tableau videos de l'objet JavaScript
+      // Extract the array videos from the database, filter it, replace it
       const videos = database.videos;
-
-      // Filtrer les vidéos pour exclure celle avec l'ID donné
       const updatedVideos = videos.filter((video) => video.id !== videoId);
-      // Remplacer le tableau videos dans l'objet JavaScript
       database.videos = updatedVideos;
 
-      // console.log(database);
-
-      console.log(database);
+      // and rewrite the JSON file
       database = JSON.stringify(database);
-
-      // Écrire les vidéos mises à jour dans le fichier JSON
       fs.writeFileSync("database/john.lib.json", database);
+
       res.status(200).json({ message: "Video deleted successfully" });
     } catch (error) {
       console.error("Error deleting video:", error);

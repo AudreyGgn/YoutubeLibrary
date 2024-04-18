@@ -1,4 +1,5 @@
 import React from 'react';
+import './MenuDiv';
 
 interface HelloProps {
     userName: string;
@@ -6,9 +7,7 @@ interface HelloProps {
   
   const Hello: React.FC<HelloProps> = ({ userName }) => {
     return (
-      <div style={{ border: '2px solid red', borderRadius: '10px', width: '100%', height: '20%', marginBottom: '20px' }}>
-        <p>Hello {userName}</p>
-      </div>
+      <h1 className="hello">Hello {userName} !</h1>
     );
   };
 

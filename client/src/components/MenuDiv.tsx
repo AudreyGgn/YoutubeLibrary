@@ -2,7 +2,7 @@ import React from 'react';
 import Hello from './Hello';
 import SearchInput from './SearchInput';
 import VideosList from './VideosList';
-
+import './menuDiv.css';
 
 interface Video {
   id: string;
@@ -16,7 +16,7 @@ interface MenuDivProps {
 
 const MenuDiv: React.FC<MenuDivProps> = ({ userName, videos }) => {
   return (
-    <div style={{ border: '2px solid red', borderRadius: '10px', width: '80%', height: '80%', padding: '20px' }}>
+    <div className="menuDiv">
       <Hello userName={userName} />
       <SearchInput />
       <VideosList videos={videos} onDelete={() => {}} />

@@ -1,22 +1,22 @@
 import React from 'react';
 
+// Define the props interface for the Video component
 interface VideoProps {
   id: string;
   title: string;
-  onDelete: (id: string) => void; // Fonction de suppression de la vidéo
+  onDelete: (id: string) => void; // Function to delete the video
 }
 
-
-//Mettre handleDelete dans onDelete !
 const Video: React.FC<VideoProps> = ({ id, title, onDelete }) => {
+  
+  // Handle video deletion
   const handleDelete = () => {
-    onDelete(id); // Appeler la fonction onDelete avec l'ID de la vidéo
+    onDelete(id);
   };
 
-  const handleOpenVideo = () => {
-    // Construire l'URL de la vidéo sur YouTube en utilisant son ID
+  // Handle opening the video on YouTube : construct the URL using its ID and open the window Youtube corresponding
+  const handleOpenVideo = () => { 
     const youtubeUrl = `https://www.youtube.com/watch?v=${id}`;
-    // Ouvrir une nouvelle fenêtre vers l'URL de la vidéo sur YouTube
     window.open(youtubeUrl, '_blank');
   };
 

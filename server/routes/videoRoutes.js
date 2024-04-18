@@ -3,7 +3,7 @@ const router = express.Router();
 
 const videoController = require("../controllers/videoController");
 
-// Route pour la suppression d'une vidéo par ID
+//Delete a video from the database by its id
 router.delete("/:id", videoController.deleteVideoById);
 
 module.exports = router;
