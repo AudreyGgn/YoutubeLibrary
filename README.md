@@ -1,4 +1,4 @@
-# Project Playlist
+# YoutubeLibrary
 
 This project is a web application that presents a playlist stored as a JSON file, provides links to view these videos on YouTube, and allows users to delete items from the database.
 
