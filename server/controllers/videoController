@@ -20,7 +20,7 @@ module.exports = {
 
       // and rewrite the JSON file
       database = JSON.stringify(database);
-      fs.writeFileSync("database/john.lib.json", database);
+      fs.writeFileSync(`database/${username}.lib.json`, database);
 
       res.status(200).json({ message: "Video deleted successfully" });
     } catch (error) {

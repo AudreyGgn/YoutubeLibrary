@@ -19,7 +19,7 @@ const MenuDiv: React.FC<MenuDivProps> = ({ userName, videos }) => {
     <div className="menuDiv">
       <Hello userName={userName} />
       <SearchInput />
-      <VideosList videos={videos} onDelete={() => {}} />
+      <VideosList videos={videos} userName={userName} onDelete={() => {}} />
     </div>
   );
 };

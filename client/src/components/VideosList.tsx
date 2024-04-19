@@ -10,17 +10,18 @@ interface VideoData {
 
 // Define interface for VideosList props
 interface VideosListProps {
+  userName: string;
   videos: VideoData[] | undefined; // Array of video data or undefined
   onDelete: (id: string) => void; // Function to delete a video
 }
 
 
-const VideosList: React.FC<VideosListProps> = ({ videos }) => {
+const VideosList: React.FC<VideosListProps> = ({ userName, videos }) => {
 
      // Request to delete a video from the database by its ID
     const deleteVideo = async (id: string) => {
       try {
-        const response = await fetch(`http://localhost:5000/api/videos/${id}`, {
+        const response = await fetch(`http://localhost:5000/videos/${id}/${userName}`, {
           method: 'DELETE',
         });
         if (response.ok) {
