@@ -26,8 +26,4 @@ This project is a web application that presents a playlist stored as a JSON file
 
 ---
 
-<<<<<<< HEAD
 💪 Special thanks to [Mathurin](https://www.mathurinsekine.fr/) & [Alexis](https://github.com/realalexis) ! 💪
-=======
-💪 Special thanks to Mathurin & Alexis !
->>>>>>> 7039d5f7e38d85e10bfa2c606ba02aa7fba3a0bb
