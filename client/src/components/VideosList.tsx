@@ -1,5 +1,6 @@
 import React from 'react';
 import Video from './Video';
+import './menuDiv.css';
 
 // Define interface for video data
 interface VideoData {
@@ -19,7 +20,7 @@ const VideosList: React.FC<VideosListProps> = ({ videos }) => {
      // Request to delete a video from the database by its ID
     const deleteVideo = async (id: string) => {
       try {
-        const response = await fetch(`http://localhost:5000/videos/${id}`, {
+        const response = await fetch(`http://localhost:5000/api/videos/${id}`, {
           method: 'DELETE',
         });
         if (response.ok) {
@@ -34,7 +35,7 @@ const VideosList: React.FC<VideosListProps> = ({ videos }) => {
     };
 
   return (
-    <div style={{ border: '2px solid red', borderRadius: '10px', width: '100%', height: '50%', overflowY: 'auto' }}>
+    <div className="videosList">
       {videos && videos.map((video) => (
         <div key={video.id}>
           <Video id={video.id} title={video.title} onDelete={() => deleteVideo(video.id)} />

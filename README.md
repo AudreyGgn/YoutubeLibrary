@@ -1,4 +1,4 @@
-# Project Playlist
+# YoutubeLibrary
 
 This project is a web application that presents a playlist stored as a JSON file, provides links to view these videos on YouTube, and allows users to delete items from the database.
 
@@ -14,12 +14,16 @@ This project is a web application that presents a playlist stored as a JSON file
 2. Install dependencies by navigating to the `server` directory, then to the `client` directory, and running the following command in each :
    `npm install`
 
-3. Start the backend server by running the following command:
+3. Start the backend server by running the following command :
    `npm run dev`
 
-4. Start the frontend server by running the following command:
+4. Start the frontend server by running the following command :
    `npm run start`
 
 ## Usage
 
 - To get the playlist of a user, use the following URL replacing "username" by one of this 3 names : ada, john, mark : http://localhost:3000/username
+
+---
+
+💪 Special thanks to [Mathurin](https://www.mathurinsekine.fr/) & [Alexis](https://github.com/realalexis) ! 💪
